@@ -1,9 +1,10 @@
-import React from 'react';
-import { Heart, Scissors, Stethoscope, Bluetooth as Tooth, Home, Utensils, ArrowRight, Star, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Heart, Scissors, Stethoscope, Bluetooth as Tooth, Home, Utensils, ArrowRight, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
 import HeroSection from './components/HeroSection';
 import ServiceCard from './components/ServiceCard';
 import PricingCard from './components/PricingCard';
 import TestimonialCard from './components/TestimonialCard';
+import Navigation from './components/Navigation';
+import AboutUs from './components/AboutUs';
 
 function App() {
   const services = [
@@ -149,13 +150,13 @@ function App() {
       name: "Sarah Johnson",
       pet: "Max (Golden Retriever)",
       image: "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-      quote: "The team at PawCare treats Max like their own pet. Their grooming services are exceptional, and Max always comes home happy!"
+      quote: "The team at Animore treats Max like their own pet. Their grooming services are exceptional, and Max always comes home happy!"
     },
     {
       name: "Michael Rodriguez",
       pet: "Luna (Maine Coon)",
       image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-      quote: "Luna used to hate going to the vet, but she actually enjoys her visits to PawCare. Their gentle approach makes all the difference."
+      quote: "Luna used to hate going to the vet, but she actually enjoys her visits to Animore. Their gentle approach makes all the difference."
     },
     {
       name: "Emily Chen",
@@ -168,30 +169,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white shadow-sm sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <Heart className="h-8 w-8 text-rose-500" />
-              <span className="ml-2 text-xl font-bold text-gray-800">PawCare</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#services" className="text-gray-600 hover:text-rose-500 transition-colors">Services</a>
-              <a href="#pricing" className="text-gray-600 hover:text-rose-500 transition-colors">Pricing</a>
-              <a href="#testimonials" className="text-gray-600 hover:text-rose-500 transition-colors">Testimonials</a>
-              <a href="#contact" className="text-gray-600 hover:text-rose-500 transition-colors">Contact</a>
-              <button className="bg-rose-500 text-white px-4 py-2 rounded-md hover:bg-rose-600 transition-colors">Book Now</button>
-            </div>
-            <div className="md:hidden flex items-center">
-              <button className="text-gray-600">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
       <HeroSection />
@@ -231,46 +209,7 @@ function App() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 bg-rose-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-800 sm:text-4xl">Why Choose PawCare?</h2>
-            <p className="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
-              We're dedicated to providing exceptional care for your pets with a focus on comfort, health, and happiness.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="inline-flex items-center justify-center h-12 w-12 rounded-md bg-rose-100 text-rose-500 mb-4">
-                <Star size={24} />
-              </div>
-              <h3 className="text-xl font-medium text-gray-800 mb-2">Experienced Staff</h3>
-              <p className="text-gray-600">Our team consists of certified professionals with years of experience in pet care.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="inline-flex items-center justify-center h-12 w-12 rounded-md bg-rose-100 text-rose-500 mb-4">
-                <Heart size={24} />
-              </div>
-              <h3 className="text-xl font-medium text-gray-800 mb-2">Loving Environment</h3>
-              <p className="text-gray-600">We treat every pet with love and care, ensuring they feel comfortable and safe.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="inline-flex items-center justify-center h-12 w-12 rounded-md bg-rose-100 text-rose-500 mb-4">
-                <Stethoscope size={24} />
-              </div>
-              <h3 className="text-xl font-medium text-gray-800 mb-2">Modern Facilities</h3>
-              <p className="text-gray-600">Our state-of-the-art facilities are designed to provide the best care possible.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="inline-flex items-center justify-center h-12 w-12 rounded-md bg-rose-100 text-rose-500 mb-4">
-                <Utensils size={24} />
-              </div>
-              <h3 className="text-xl font-medium text-gray-800 mb-2">Personalized Care</h3>
-              <p className="text-gray-600">We understand that each pet is unique and provide tailored care to meet their specific needs.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AboutUs />
 
       {/* Testimonials Section */}
       <section id="testimonials" className="py-16">
@@ -358,7 +297,7 @@ function App() {
                     </div>
                     <div className="ml-4">
                       <p className="text-gray-700 font-medium">Email</p>
-                      <p className="text-gray-600">info@pawcare.com</p>
+                      <p className="text-gray-600">info@Animore.com</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -415,7 +354,7 @@ function App() {
             <div>
               <div className="flex items-center">
                 <Heart className="h-8 w-8 text-rose-400" />
-                <span className="ml-2 text-xl font-bold">PawCare</span>
+                <span className="ml-2 text-xl font-bold">Animore</span>
               </div>
               <p className="mt-4 text-gray-400">
                 Providing exceptional care for your beloved pets since 2010. Your pet's health and happiness is our top priority.
@@ -453,7 +392,7 @@ function App() {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} PawCare. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Animore. All rights reserved.</p>
           </div>
         </div>
       </footer>
